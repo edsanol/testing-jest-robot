@@ -7,50 +7,58 @@ function createRobot(x, y) {
        // moveUp - incrementa y en 1
 
         moveUp: () => {
-            this.y++;
+            const coorY = this.y + 1
+            if(coorY > 10){
+                throw new Error("wrong error")
+            } else {
+                this.y = coorY
+            }
         },
 
        // moveDown - decrementa y en 1.
 
         moveDown: () => {
-            this.y--;
+            const coorY = this.y - 1
+            if(coorY < 0){
+                throw new Error("wrong error")
+            } else {
+                this.y = coorY
+            }
         },
 
        // moveLeft - decrementa x en 1.
 
         moveLeft: () => {
-            this.x--;
+            const coorX = this.x - 1
+            if(coorX < 0){
+                throw new Error("wrong error")
+            } else {
+                this.x = coorX
+            }
         },
 
        // moveRight - incrementa x en 1
 
         moveRight: () => {
-            this.x++;
+            const coorX = this.x + 1
+            if(coorX > 10){
+                throw new Error("wrong error")
+            } else {
+                this.x = coorX
+            }
         },
 
        // getX - retorna x
 
         getX: () => {
-
-            if (this.x > 10 || this.x < 0) {
-                throw new Error("wrong error");
-            } else {
-                return this.x
-            }
-            
+            return this.x
         },
 
        // getY - retorna y
 
-       getY: () => {
-
-            if (this.y > 10 || this.y < 0) {
-                throw new Error("wrong error");
-            } else {
-                return this.y
-            }
-
-       }
+        getY: () => {
+            return this.y
+        }
        
     }
 }
